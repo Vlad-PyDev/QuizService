@@ -1,0 +1,32 @@
+body {
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+  font-family: 'Trebuchet MS', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+.quiz-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.question-block {
+  margin: 20px 0;
+  text-align: left;
+}
+.btn {
+  background: #3498db;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+  text-decoration: none;
+}

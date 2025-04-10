@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz App - Викторина</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Викторина</h1>
+    <form method="POST" action="{{ url_for('main') }}">
+      {% for q in quiz %}
+      <div class="question-block">
+        <p>{{ q.question }}</p>
+        {% for opt in q.options %}
+        <label><input type="radio" name="question_{{ q.id }}" value="{{ opt }}" required> {{ opt }}</label><br>
+        {% endfor %}
+      </div>
+      {% endfor %}
+      <button type="submit" class="btn">Отправить ответы</button>
+    </form>
+    {% if score is not none %}
+      <h2>Ваш результат: {{ score }} из {{ quiz|length }}</h2>
+    {% endif %}
+    <a href="{{ url_for('index') }}" class="btn">На старт</a>
+  </div>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
